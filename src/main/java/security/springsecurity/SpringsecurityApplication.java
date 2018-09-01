@@ -6,6 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import security.springsecurity.entity.Task;
 import security.springsecurity.repository.TaskRepository;
 import security.springsecurity.repository.UserRepository;
@@ -48,4 +51,5 @@ public class SpringsecurityApplication implements CommandLineRunner {
 
         Stream.of("T1","T2","T3").forEach(t->taskRepository.save(new Task(t)));
     }
+
 }
